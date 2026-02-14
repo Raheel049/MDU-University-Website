@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+/* Ye batana lazmi hai ke Tailwind kahan kahan apply ho */
+@source "./**/*.{js,ts,jsx,tsx}";
+

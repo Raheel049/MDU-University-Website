@@ -1,0 +1,114 @@
+.container {
+    padding: 20px;
+    background-color: #f8fafc;
+    min-height: 100%;
+}
+
+.formCard {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #134e4a 100%); /* Uni Blue to Green */
+    padding: 25px 35px;
+    color: white;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.header p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.formBody {
+    padding: 35px;
+}
+
+.sectionTitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns like the image */
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.inputGroup label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.inputField {
+    padding: 12px 15px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.inputField:focus {
+    border-color: #2e7d32; /* Uni Green focus */
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+.submitArea {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.submitBtn {
+    background-color: #2e7d32; /* Uni Green */
+    color: white;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+}
+
+.submitBtn:hover {
+    background-color: #1b5e20;
+}
+
+.submitBtn:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

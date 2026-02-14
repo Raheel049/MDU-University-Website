@@ -1,0 +1,149 @@
+/* Container with moving background from previous step */
+.container {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #f1f5f9, #e2e8f0, #cbd5e1);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+  }
+  
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Main Card with Entry Animation */
+  .formCard {
+    background: #ffffff;
+    width: 100%;
+    max-width: 950px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Taake corner rounded rahein */
+    animation: slideIn 0.8s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Page Header */
+  .header {
+    padding: 30px;
+    text-align: center;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .header h2 {
+    font-size: 28px;
+    color: #1e293b;
+    font-weight: 800;
+    margin: 0;
+  }
+  
+  /* SECTION STYLING (Like Register Student) */
+  .section {
+    margin: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    opacity: 0; /* Animation ke liye */
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  /* Staggered Delay for Sections */
+  .section:nth-child(1) { animation-delay: 0.3s; }
+  .section:nth-child(2) { animation-delay: 0.5s; }
+  .section:nth-child(3) { animation-delay: 0.7s; }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+  
+  /* Title with Background Color (The look you wanted) */
+  .sectionTitle {
+    background: #1e554e; /* Dark professional color */
+    color: #ffffff;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 25px;
+    background: #fff;
+  }
+  
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: 1fr 1fr; }
+  }
+  
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+  
+  /* Interactive Inputs */
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .inputGroup label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+  }
+  
+  .inputGroup input, .inputGroup select {
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover & Focus Interaction */
+  .inputGroup input:focus, .inputGroup select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+    outline: none;
+    background: #fdfdfd;
+  }
+  
+  /* Submit Area */
+  .submitArea {
+    padding: 20px;
+    background: #f8fafc;
+    text-align: right;
+    border-top: 1px solid #e2e8f0;
+  }
+  
+  .submitBtn {
+    background: #1e554e;
+    color: white;
+    padding: 12px 35px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .submitBtn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+  }

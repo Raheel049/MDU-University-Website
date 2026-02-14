@@ -1,0 +1,164 @@
+.dashboardContainer {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f7f6;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 280px;
+    background: linear-gradient(180deg, #134e4a 0%, #0f172a 100%);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: white;
+}
+
+.logoSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    padding-left: 10px;
+}
+
+.sidebarBtn {
+    background: white;
+    color: #134e4a;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    text-align: left;
+}
+
+.sidebarBtn:hover{
+    color: whitesmoke;
+}
+
+.sidebarBtnSecondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.sidebarBtnSecondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content */
+.mainContent {
+    flex: 1;
+    padding: 40px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+/* Stats Cards */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.statCard {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.iconBox {
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 24px;
+}
+
+/* Table Area */
+.tableContainer {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.customTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.customTable th {
+    text-align: left;
+    padding: 15px;
+    color: #64748b;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.customTable td {
+    padding: 15px;
+    border-bottom: 1px solid #f8fafc;
+    color: #334155;
+}
+
+.statusBadge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* ========================= */
+/* 📱 Tablet Devices */
+/* ========================= */
+@media (max-width: 1024px) {
+
+    .sidebar {
+      width: 220px;
+      padding: 20px 15px;
+    }
+  
+    .sidebarBtn,
+    .sidebarBtnSecondary {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  
+    .mainContent {
+      padding: 30px;
+    }
+  
+    .statsGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  

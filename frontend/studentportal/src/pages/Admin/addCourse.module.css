@@ -1,0 +1,96 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 80vh;
+  }
+  
+  .formCard {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid #e2e8f0;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 2px solid #3b82f6;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+    gap: 20px;
+  }
+  
+  @media (max-width: 600px) {
+    .grid {
+      grid-template-columns: 1fr; /* Mobile par 1 Column */
+    }
+  }
+  
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .inputGroup label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748b;
+  }
+  
+  .inputGroup input,
+  .inputGroup select {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .inputGroup input:focus,
+  .inputGroup select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  
+  .submitBtn {
+    margin-top: 10px;
+    padding: 14px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .submitBtn:hover {
+    background: #2563eb;
+  }
+  
+  .submitBtn:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+  }
