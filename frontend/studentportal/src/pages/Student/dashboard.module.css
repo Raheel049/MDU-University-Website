@@ -1,0 +1,352 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f0f4f8;
+    font-family: 'Inter', sans-serif;
+}
+
+
+.sidebar {
+    width: 288px;
+    background: linear-gradient(180deg, #134e4a 0%, #0f172a 100%);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.logoSection {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding: 0 8px;
+}
+
+.logoSection h2 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    
+}
+
+.navButton {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 30px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgb(18, 68, 75);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.navButtonActive {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: 700;
+}
+
+.navButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.logoutBtn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background:  rgb(18, 68, 75);
+    padding: 12px;
+    border-radius: 30px;
+    color: #f87171;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.logoutBtn:hover {
+    background: rgba(248, 113, 113, 0.1);
+}
+
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.header {
+    height: 40px;
+    background: white;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.welcomeText {
+    font-style: italic;
+    color: #64748b;
+    font-size: 1.125rem;
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.profileInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-left: 1px solid #f1f5f9;
+    padding-left: 32px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #f1f5f9;
+}
+
+
+.content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.card {
+    background: white;
+    border-radius: 40px;
+    padding: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f8fafc;
+    height: 150px;
+}
+
+.trackerContainer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 18px;
+    margin-top: 10px;
+}
+
+.line {
+    position: absolute;
+    top: 50%;
+    left: 48px;
+    right: 48px;
+    height: 3px;
+    background: #f1f5f9;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.activeLine {
+    position: absolute;
+    top: 50%;
+    left: 48px;
+    width: 50%;
+    height: 3px;
+    background: #0d9488;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.step {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.iconCircle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
+.completed {
+    background: #0d9488;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(13, 148, 136, 0.3);
+}
+
+.pending {
+    border: 4px solid #facc15;
+    color: #eab308;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px;
+    height: 300px;
+}
+
+.testCard {
+    grid-column: span 7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 18px;
+    background-color: #ffffff;
+    border-radius: 16px;
+}
+
+.testIcon {
+    width: 96px;
+    height: 96px;
+    background: #f0fdfa;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    color: #0d9488;
+}
+
+.startBtn {
+    background: #0d9488;
+    color: white;
+    padding: 16px 8px;
+    border-radius: 16px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(13, 148, 136, 0.2);
+    transition: transform 0.2s;
+}
+
+.startBtn:hover {
+    transform: scale(1.05);
+}
+
+.deadlinesCard {
+    grid-column: span 5;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.deadlineList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.deadlineItem {
+    display: flex;
+    gap: 12px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #94a3b8;
+    margin-top: 6px;
+}
+/* Toggle icon ko desktop pe hide rakhein */
+.menuToggle {
+    display: none;
+    cursor: pointer;
+}
+
+/* Mobile Responsive Settings */
+@media (max-width: 760px) {
+    .menuToggle {
+        display: block; /* Hamburger icon show ho jaye */
+        /* margin-top: 20px; */
+        position: absolute;
+        left: 5px;
+
+    }
+
+    .sidebar {
+        position: fixed;
+        left: -288px; /* Screen se bahar chala jaye */
+        top: 0;
+        bottom: 0;
+        z-index: 1001;
+        transition: 0.3s ease-in-out;
+    }
+
+    .sidebarActive {
+        left: 0 !important; /* Click pe wapas screen pe aaye */
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+    }
+
+    /* Grid fix for mobile */
+    .grid {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+    
+    .testCard, .deadlinesCard {
+        grid-column: span 12;
+    }
+}
+
+
+.closeBtn {
+    display: none; /* Desktop pe hidden */
+    cursor: pointer;
+    color: white; /* Kyunke sidebar dark hai to icon white hona chahiye */
+}
+
+@media (max-width: 760px) {
+    .closeBtn {
+        display: block; /* Sirf mobile view (760px se niche) pe show hoga */
+        position: absolute;
+        left: 230px;
+        top: 10px;
+
+    }
+}

@@ -1,18 +1,17 @@
 import React, { useState } from "react";
-import axios from "axios";
+import axiosInstance from "../../api/axoisInstance";
 import styles from "./verifyAdmission.module.css";
 
 
 const VerifyAdmission = ({ onVerified }) => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  const API = import.meta.env.VITE_API_URL;
 
   const handleVerify = async () => {
-    if (!email) return alert("Email email address!");
+    if (!email) return alert("Email address required!");
     setLoading(true);
     try {
-      const res = await axios.post(`${API}/api/admin/verifyAdmission`, { email });
+      const res = await axiosInstance.post("/api/admin/verifyAdmission", { email });
       
       // Check karein ke status waqai true hai
       if (res.data.status === true) { 

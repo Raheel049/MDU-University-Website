@@ -3,7 +3,6 @@ import styles from "./AdminDashboard.module.css";
 import { useNavigate } from "react-router-dom";
 import {
   FaUserPlus,
-  FaUser,
   FaChalkboardTeacher,
   FaUserGraduate,
   FaBookOpen,
@@ -13,11 +12,11 @@ import {
   FaBell,
 } from "react-icons/fa";
 import { useState } from "react";
-import axios from "axios";
+import axiosInstance from "../../api/axoisInstance";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
-  const API = import.meta.env.VITE_API_URL;
+
   const [studentCount, setStudentCount] = useState(0);
   const [students, setStudents] = useState([]);
   const [courseCount, setCourseCount] = useState(0);
@@ -25,7 +24,7 @@ const AdminDashboard = () => {
 
   const fetchteacherCount = async () => {
     try {
-      const response = await axios.get(`${API}/api/admin/teacherCount`)
+      const response = await axiosInstance.get("/api/admin/teacherCount")
       if(response.data.status){
         setTeacherCount(response.data.count);
       }
@@ -34,13 +33,9 @@ const AdminDashboard = () => {
     }
   }
 
-  useEffect(() => {
-    fetchteacherCount()
-  }, [])
-
   const fetchCourses = async () => {
     try {
-      const response = await axios.get(`${API}/api/admin/getCourseCount`);
+      const response = await axiosInstance.get("/api/admin/getCourseCount");
       if(response.data.status){
         setCourseCount(response.data.count)
 
@@ -50,13 +45,9 @@ const AdminDashboard = () => {
     }
   }
 
-  useEffect(() => {
-    fetchCourses()
-  },[]);
-
   const fetchStats = async () => {
     try {
-      const response = await axios.get(`${API}/api/admin/getStudentStats`);
+      const response = await axiosInstance.get("/api/admin/getStudentStats");
       if (response.data.success) {
         setStudentCount(response.data.count);
       }
@@ -65,13 +56,9 @@ const AdminDashboard = () => {
     }
   };
 
-  useEffect(() => {
-    fetchStats();
-  }, []);
-
   const fetchDashboardData = async () => {
     try {
-      const response = await axios.get(`${API}/api/admin/getStudentsData`);
+      const response = await axiosInstance.get("/api/admin/getStudentsData");
       if (response.data.status) {
         setStudents(response.data.data);
       }
@@ -82,6 +69,9 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     fetchDashboardData();
+    fetchStats();
+    fetchCourses();
+    fetchteacherCount();
   }, []);
 
 

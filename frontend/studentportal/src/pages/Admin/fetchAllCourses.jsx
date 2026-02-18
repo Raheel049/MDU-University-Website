@@ -1,14 +1,14 @@
-import axios from 'axios'
+import axiosInstance from '../../api/axoisInstance';
 import React, { useEffect, useState } from 'react'
 
 const AllCourses = () => {
 
-  const API = import.meta.env.VITE_API_URL;
+
   const [courses, setCourses] = useState([]);
 
   const allCourses = async () => {
     try {
-      const response  = await axios.get(`${API}/api/admin/allCourses`);
+      const response  = await axiosInstance.get("/api/admin/allCourses");
       if(response.data.status){
         setCourses(response.data.data);
       }

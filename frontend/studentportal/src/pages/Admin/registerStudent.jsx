@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axiosInstance from "../../api/axoisInstance";
 import styles from "./registerStudent.module.css";
 
 const RegisterStudent = ({ admissionData }) => {
-  const API = import.meta.env.VITE_API_URL;
+  
   const [loading, setLoading] = useState(false);
   
   // Initial State
@@ -42,8 +42,8 @@ const RegisterStudent = ({ admissionData }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const URL = `${API}/api/admin/addStudent`;
-      const res = await axios.post(URL, formData);
+      const URL = "/api/admin/addStudent";
+      const res = await axiosInstance.post(URL, formData);
       alert(res.data.message || "Student Registered Successfully!");
       
       // Reset logic ya success redirection yahan kar sakte hain

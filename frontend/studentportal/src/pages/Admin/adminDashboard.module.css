@@ -162,3 +162,77 @@
     }
   }
   
+
+ /* ... (Aapka baaki saara purana code wahi rahega) ... */
+
+/* ============================================= */
+/* 📱 Mobile Devices (Phone) - Max width 768px   */
+/* ============================================= */
+@media (max-width: 500px) {
+    
+    .dashboardContainer {
+        flex-direction: column; /* Sidebar ko upar aur content ko niche lane ke liye */
+    }
+
+    /* Sidebar 50% width par (Aapki requirement ke mutabiq) */
+    .sidebar {
+        width: 100%; /* Default mobile par full width behtar hoti hai */
+        /* Lekin agar aapko specific 50% chahiye toh width: 50% kar dein */
+        padding: 20px;
+        gap: 8px;
+    }
+
+    /* Logo section ko mobile par adjust karein */
+    .logoSection {
+        margin-bottom: 20px;
+        justify-content: center;
+    }
+
+    .mainContent {
+        padding: 20px;
+        width: 100%;
+    }
+
+    /* 4 Cards jo 1-by-1 (ek ke niche ek) aayein */
+    .statsGrid {
+        /* grid-template-columns: 1fr; 50% par 1 card matlab full width of container */
+        gap: 15px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        
+    }
+
+    .statCard {
+        padding: 15px;
+        justify-content: center; /* Mobile par centered look */
+    }
+
+    /* Recent Registration Table 100% par niche aa jaye */
+    .tableContainer {
+        width: 100%;
+        padding: 15px;
+        overflow-x: auto; /* Mobile par table scrollable honi chahiye taake layout na phate */
+        margin-top: 20px;
+    }
+
+    .customTable {
+        min-width: 500px; /* Table ko chota hone se rokay ga, scroll enable karega */
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/* ============================================= */
+/* 📱 Extra Small Devices (320px - 480px)        */
+/* ============================================= */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%; /* Bohat chotay mobile par 50% ajeeb lagay ga isliye 100% */
+    }
+}

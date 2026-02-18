@@ -1,8 +1,10 @@
-import express from "express"
-import { addCourse, addStudent, addTeacher, allCourses, allStudents, dropStudent, getCourseCount, getStudentData, getStudentStats, teacherCount, verifyAdmission } from "../controller/adminPortal.js"
+import express, { Router } from "express"
+import { addCourse, addStudent, addTeacher, allCourses, allStudents, dropStudent, getCourseCount, getStudentData, getStudentStats, teacherCount, verifyAdmission } from "../controller/adminPortal.js";
+import { checkAuthMiddleware } from "../controller/middleware.js";
 
 const adminPortalRoutes = express.Router()
 
+adminPortalRoutes.use(checkAuthMiddleware)
 
 adminPortalRoutes.post("/verifyAdmission", verifyAdmission);
 

@@ -141,7 +141,7 @@ export const loginHandler = async (request, response) => {
 
     if (!comparePassword) {
       return response.status(401).json({
-        message: "invalid email or Paaword!",
+        message: "Invalid email or password!",
         data: null,
         status: false,
       });

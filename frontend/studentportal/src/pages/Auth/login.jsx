@@ -38,7 +38,7 @@ const Login = () => {
       <div className={styles["login-box"]}>
         {/* Tailwind Heading Fix: text size aur bold reset ho gaya tha */}
         <h2 className={`${styles["login-title"]} text-2xl font-bold text-center text-#2e7d32 mb-6`}>
-          Student Login
+          Login Page
         </h2>
 
         <form onSubmit={loginHandler}>

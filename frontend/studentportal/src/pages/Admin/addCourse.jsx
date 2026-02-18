@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import axios from "axios";
 import styles from "./addCourse.module.css"; // CSS module use karein
+import axiosInstance from "../../api/axoisInstance.js";
 
 const AddCourse = () => {
-  const API = import.meta.env.VITE_API_URL;
+  
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     courseName: "",
@@ -23,7 +23,7 @@ const AddCourse = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post(`${API}/api/admin/addCourse`, formData);
+      const response = await axiosInstance.post("/api/admin/addCourse", formData);
       if (response.data.status) {
         alert("Course Added Successfully!");
         setFormData({

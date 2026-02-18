@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axiosInstance from '../../api/axoisInstance';
 import React, { useEffect, useState } from 'react';
 import styles from './fetchAllStudent.module.css';
 import { FaTrashAlt, FaSearch } from 'react-icons/fa';
@@ -10,7 +10,7 @@ const FetchAllStudent = () => {
 
   const fetchAllStudents = async () => {
     try {
-      const response = await axios.get(`${API}/api/admin/allStudents`);
+      const response = await axiosInstance.get(`${API}/api/admin/allStudents`);
       if (response.data.status) {
         setStudents(response.data.data);
       }
@@ -22,7 +22,7 @@ const FetchAllStudent = () => {
   const handleDrop = async (id) => {
     if (window.confirm("Are you sure you want to drop this student?")) {
       try {
-        const res = await axios.delete(`${API}/api/admin/dropStudent/${id}`);
+        const res = await axiosInstance.delete(`${API}/api/admin/dropStudent/${id}`);
         if (res.data.status) {
           // List update karein bina refresh kiye
           console.log(id)

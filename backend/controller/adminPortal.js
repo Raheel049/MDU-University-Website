@@ -4,7 +4,7 @@ import addStudentModel from "../models/addStudentSchema.js";
 import addTeacherModel from "../models/addTeacherSchema.js";
 import admissionFormModel from "../models/admissionFormSchema.js";
 import bcrypt from "bcrypt";
-import { ReturnDocument } from "mongodb";
+
 
 export const verifyAdmission = async (request, response) => {
   try {
@@ -332,10 +332,10 @@ export const allStudents = async (request,response) => {
 export const dropStudent = async (request, response) => {
   try {
     
-    const {id} = request.params
-    const deleteSudent = await addStudentModel.findByIdAndDelete(id)
+    const { id } = request.params
+    const deleteStudent = await addStudentModel.findByIdAndDelete(id)
 
-    if(!deleteSudent){
+    if(!deleteStudent){
       return response.status(404).json({
         message : error.message || "Student not found",
         status : false,

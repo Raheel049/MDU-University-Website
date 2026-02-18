@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import axios from "axios";
 import styles from "./addTeacher.module.css";
+import axiosInstance from "../../api/axoisInstance";
 
 const AddTeacher = () => {
-  const API = import.meta.env.VITE_API_URL;
   const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -27,7 +26,7 @@ const AddTeacher = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post(`${API}/api/admin/addTeacher`, formData);
+      const res = await axiosInstance.post("/api/admin/addTeacher", formData);
       if (res.data.status) {
         alert("Teacher Registered Successfully!");
         // Reset form logic...
