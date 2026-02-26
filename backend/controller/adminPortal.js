@@ -4,6 +4,7 @@ import addStudentModel from "../models/addStudentSchema.js";
 import addTeacherModel from "../models/addTeacherSchema.js";
 import admissionFormModel from "../models/admissionFormSchema.js";
 import bcrypt from "bcrypt";
+import questionSchemaModel from "../models/questionSchema.js";
 
 
 export const verifyAdmission = async (request, response) => {
@@ -368,6 +369,50 @@ export const allCourses = async (request, response) => {
   } catch (error) {
     return response.status(500).json({
       message : error.message || "Internal Server Error",
+      status : false,
+      data : null
+    })
+  }
+}
+
+export const addExamQuestions = async (request, response) => {
+  try { 
+    const {questionText, options, correctAns, marks} = request.body
+
+    if(!questionText || !options  || options.length !== 4 || !correctAns ){
+      return response.status(400).json({
+        message : "Requied fields are missing",
+        status : false,
+        data : null
+      })
+    }
+
+    const isExists = await questionSchemaModel.findOne({questionText});
+
+    if(isExists){
+      return response.status(401).json({
+        message : "Question already exists",
+        data : null,
+        status : false
+      })
+    }
+
+    await questionSchemaModel.create({
+      questionText,
+      options,
+      correctAns,
+      marks,
+    })
+
+    // console.log("request",Request)
+    response.status(200).json({
+      message : "SuccessFully Add question",
+      status : true,
+      data : null
+    })
+  } catch (error) {
+    return response.status(500).json({
+      message : error.message || "Internal server error",
       status : false,
       data : null
     })

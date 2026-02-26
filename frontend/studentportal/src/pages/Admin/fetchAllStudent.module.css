@@ -1,7 +1,17 @@
+.mainContainer {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .pageContainer {
     padding: 40px;
     background-color: #f1f5f9; /* Soft Grey Background for Contrast */
     min-height: 100vh;
+    overflow-y: auto;
+    width: 100%;
+
   }
   
   .header {

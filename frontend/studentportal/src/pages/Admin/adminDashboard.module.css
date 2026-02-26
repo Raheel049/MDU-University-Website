@@ -1,238 +1,201 @@
+*{
+    padding: 0%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Puray page ka main container */
 .dashboardContainer {
     display: flex;
     min-height: 100vh;
-    background-color: #f4f7f6;
-    font-family: 'Inter', sans-serif;
-}
-
-/* Sidebar Styling */
-.sidebar {
-    width: 280px;
-    background: linear-gradient(180deg, #134e4a 0%, #0f172a 100%);
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    color: white;
-}
-
-.logoSection {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 40px;
-    padding-left: 10px;
-}
-
-.sidebarBtn {
-    background: white;
-    color: #134e4a;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    cursor: pointer;
-    transition: 0.3s;
     width: 100%;
-    text-align: left;
+    background-color: #f8fafc;
+    overflow: hidden; /* Bahar ka scroll band */
 }
 
-.sidebarBtn:hover{
-    color: whitesmoke;
-}
+/* Sidebar ki width fix rakhen taake wo content ko na dabaye */
+/* Agar aapka sidebar component alag hai, to usay ~260px width den */
 
-.sidebarBtnSecondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    cursor: pointer;
-    transition: 0.3s;
-    width: 100%;
-}
-
-.sidebarBtnSecondary:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-/* Main Content */
+/* Main Content Area (Header + Stats + Table) */
 .mainContent {
     flex: 1;
-    padding: 40px;
+    height: 100vh;
+    overflow-y: auto; /* Sirf ye hissa scroll hoga */
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 }
+
+/* Header Section (Dashboard Title + Profile) */
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    width: 100%;
 }
 
-/* Stats Cards */
+.header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.headerActions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.adminProfile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-left: 2px solid #e2e8f0;
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background: #0d9488;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+/* Admin Profile Styling */
+
+
+/* Stats Cards Grid */
 .statsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 25px;
     margin-bottom: 40px;
+    width: 100%;
 }
 
 .statCard {
     background: white;
     padding: 25px;
-    border-radius: 20px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     gap: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.statCard:hover {
+    transform: translateY(-5px);
 }
 
 .iconBox {
-    padding: 15px;
-    border-radius: 15px;
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 24px;
 }
 
-/* Table Area */
+.statTitle {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0 0 5px 0;
+    font-weight: 500;
+}
+
+.statCount {
+    font-size: 26px;
+    margin: 0;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* Data Table Container */
 .tableContainer {
     background: white;
     border-radius: 20px;
     padding: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+}
+
+.tableContainer h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #1e293b;
+}
+
+.tableResponsive {
+    width: 100%;
+    overflow-x: auto;
 }
 
 .customTable {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
 }
 
 .customTable th {
     text-align: left;
     padding: 15px;
+    background-color: #f8fafc;
     color: #64748b;
     font-size: 13px;
-    text-transform: uppercase;
-    border-bottom: 1px solid #f1f5f9;
+    font-weight: 600;
+    border-bottom: 1px solid #e2e8f0;
 }
+
+.headerTitle { font-size: 20px !important; font-weight: bold; margin: 0 auto; }
 
 .customTable td {
     padding: 15px;
     border-bottom: 1px solid #f8fafc;
+    font-size: 14px;
     color: #334155;
 }
 
 .statusBadge {
-    padding: 5px 12px;
+    padding: 5px 14px;
     border-radius: 20px;
-    font-size: 12px;
+    background: #dcfce7;
+    color: #15803d;
     font-weight: 700;
+    font-size: 12px;
 }
 
-
-/* ========================= */
-/* 📱 Tablet Devices */
-/* ========================= */
+/* Mobile View Adjustments */
 @media (max-width: 1024px) {
-
-    .sidebar {
-      width: 220px;
-      padding: 20px 15px;
-    }
-  
-    .sidebarBtn,
-    .sidebarBtnSecondary {
-      padding: 10px 20px;
-      font-size: 14px;
-    }
-  
     .mainContent {
-      padding: 30px;
+        padding: 20px;
     }
-  
-    .statsGrid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
+}
 
- /* ... (Aapka baaki saara purana code wahi rahega) ... */
-
-/* ============================================= */
-/* 📱 Mobile Devices (Phone) - Max width 768px   */
-/* ============================================= */
-@media (max-width: 500px) {
-    
+@media (max-width: 768px) {
     .dashboardContainer {
-        flex-direction: column; /* Sidebar ko upar aur content ko niche lane ke liye */
+        flex-direction: column; /* Mobile par sidebar upar aa sakti hai */
     }
-
-    /* Sidebar 50% width par (Aapki requirement ke mutabiq) */
-    .sidebar {
-        width: 100%; /* Default mobile par full width behtar hoti hai */
-        /* Lekin agar aapko specific 50% chahiye toh width: 50% kar dein */
-        padding: 20px;
-        gap: 8px;
-    }
-
-    /* Logo section ko mobile par adjust karein */
-    .logoSection {
-        margin-bottom: 20px;
-        justify-content: center;
-    }
-
-    .mainContent {
-        padding: 20px;
-        width: 100%;
-    }
-
-    /* 4 Cards jo 1-by-1 (ek ke niche ek) aayein */
-    .statsGrid {
-        /* grid-template-columns: 1fr; 50% par 1 card matlab full width of container */
-        gap: 15px;
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-        
-    }
-
-    .statCard {
-        padding: 15px;
-        justify-content: center; /* Mobile par centered look */
-    }
-
-    /* Recent Registration Table 100% par niche aa jaye */
-    .tableContainer {
-        width: 100%;
-        padding: 15px;
-        overflow-x: auto; /* Mobile par table scrollable honi chahiye taake layout na phate */
-        margin-top: 20px;
-    }
-
-    .customTable {
-        min-width: 500px; /* Table ko chota hone se rokay ga, scroll enable karega */
-    }
-
+    
     .header {
         flex-direction: column;
+        align-items: flex-start;
         gap: 15px;
-        text-align: center;
     }
-}
 
-/* ============================================= */
-/* 📱 Extra Small Devices (320px - 480px)        */
-/* ============================================= */
-@media (max-width: 480px) {
-    .sidebar {
-        width: 100%; /* Bohat chotay mobile par 50% ajeeb lagay ga isliye 100% */
+    .headerActions {
+        width: 100%;
+        justify-content: space-between;
     }
 }

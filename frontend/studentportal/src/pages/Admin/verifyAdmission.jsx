@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axiosInstance from "../../api/axoisInstance";
 import styles from "./verifyAdmission.module.css";
+import AdminNavbar from "../../components/adminNavbar";
 
 
 const VerifyAdmission = ({ onVerified }) => {
@@ -11,7 +12,7 @@ const VerifyAdmission = ({ onVerified }) => {
     if (!email) return alert("Email address required!");
     setLoading(true);
     try {
-      const res = await axiosInstance.post("/api/admin/verifyAdmission", { email });
+      const res = await axiosInstance.post("/api/admin/verify-admission", { email });
       
       // Check karein ke status waqai true hai
       if (res.data.status === true) { 
@@ -36,7 +37,9 @@ const VerifyAdmission = ({ onVerified }) => {
   };
 
   return (
-    <div className={styles.verifyContainer}>
+    <div className={styles.mainContainer}>
+      <AdminNavbar />
+      <div className={styles.verifyContainer}>
       <div className={styles.verifyBox}>
         <h2 className="text-xl font-bold mb-4">Student Verification</h2>
         <p className="text-sm text-gray-500 mb-6">
@@ -60,6 +63,7 @@ const VerifyAdmission = ({ onVerified }) => {
           {loading ? "Data Fetchching..." : "Verify & Fetch Data"}
         </button>
       </div>
+    </div>
     </div>
   );
 };

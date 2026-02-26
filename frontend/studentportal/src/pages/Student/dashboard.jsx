@@ -106,7 +106,7 @@ const Dashboard = () => {
               <div className={styles.testIcon}><FaGraduationCap size={48} /></div>
               <h2 style={{fontSize: '28px', fontWeight: '800', marginBottom: '10px'}}>Start Your Entrance Test</h2>
               <p style={{color: '#94a3b8', marginBottom: '32px'}}>50 Questions | 60 Minutes</p>
-              <button className={styles.startBtn}>START TEST NOW</button>
+              <button className={styles.startBtn} onClick={() => handleNavigation("/admissionExam")}>START TEST NOW</button>
             </div>
 
             {/* DEADLINES */}

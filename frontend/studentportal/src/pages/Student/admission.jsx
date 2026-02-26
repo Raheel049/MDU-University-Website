@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./admission.module.css";
-import axios from "axios";
+import axiosInstance from "../../api/axoisInstance";
 
 const departmentsList = [
   "Computer Science",
@@ -88,8 +88,8 @@ const AdmissionForm = () => {
         departments: selectedDepartments,
       };
 
-      const URL = `${API}/api/student/admissionForm`;
-      const response = await axios.post(URL, finalData);
+      
+      const response = await axiosInstance.post("/api/student/admission-form",finalData)
 
       alert(response.data.message);
 

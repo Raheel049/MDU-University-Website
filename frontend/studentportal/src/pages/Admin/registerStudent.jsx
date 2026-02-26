@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axiosInstance from "../../api/axoisInstance";
 import styles from "./registerStudent.module.css";
+import AdminNavbar from "../../components/adminNavbar";
 
 const RegisterStudent = ({ admissionData }) => {
   
@@ -42,7 +43,7 @@ const RegisterStudent = ({ admissionData }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const URL = "/api/admin/addStudent";
+      const URL = "/api/admin/add-student";
       const res = await axiosInstance.post(URL, formData);
       alert(res.data.message || "Student Registered Successfully!");
       
@@ -67,7 +68,9 @@ const RegisterStudent = ({ admissionData }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.maonContainer}>
+      <AdminNavbar />
+      <div className={styles.container}>
       <div className={styles.formCard}>
         <div className={styles.header}>
           <h2>Final Student Registration</h2>
@@ -129,6 +132,7 @@ const RegisterStudent = ({ admissionData }) => {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 };

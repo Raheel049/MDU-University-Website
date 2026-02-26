@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./addTeacher.module.css";
 import axiosInstance from "../../api/axoisInstance";
+import AdminNavbar from "../../components/adminNavbar";
+import TopAdminNavbar from "../../components/AdminComponent/topAdminNavbar";
 
 const AddTeacher = () => {
   const [loading, setLoading] = useState(false);
@@ -26,7 +28,7 @@ const AddTeacher = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axiosInstance.post("/api/admin/addTeacher", formData);
+      const res = await axiosInstance.post("/api/admin/add-teacher", formData);
       if (res.data.status) {
         alert("Teacher Registered Successfully!");
         // Reset form logic...
@@ -51,6 +53,8 @@ const AddTeacher = () => {
   };
 
   return (
+    <div className={styles.mainContainer}>
+    <AdminNavbar />
     <div className={styles.container}>
       <div className={styles.formCard}>
         <header className={styles.header}>
@@ -200,6 +204,7 @@ const AddTeacher = () => {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 };

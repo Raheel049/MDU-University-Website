@@ -19,6 +19,8 @@ import AddCourse from './pages/Admin/addCourse';
 import AddTeacher from './pages/Admin/addTeacher';
 import FetchAllStudent from './pages/Admin/fetchAllStudents';
 import AllCourses from './pages/Admin/fetchAllCourses';
+import AdmissionExam from './pages/Student/admissionExam';
+import AddExamQUestion from './pages/Admin/addExamQuestion';
 
 function App() {
 
@@ -51,6 +53,8 @@ function App() {
           <Route path='/addTeacher' element={<AddTeacher />} />
           <Route path='/fetchAllStudents' element={<FetchAllStudent />} />
           <Route path='/fetchAllCourses' element={<AllCourses />} />
+          <Route path='/admissionExam' element={< AdmissionExam/>} />
+          <Route path='/addExamQuestion' element={<AddExamQUestion />} />
         </Route>
 
       </Routes>

@@ -2,6 +2,7 @@ import axiosInstance from '../../api/axoisInstance';
 import React, { useEffect, useState } from 'react';
 import styles from './fetchAllStudent.module.css';
 import { FaTrashAlt, FaSearch } from 'react-icons/fa';
+import AdminNavbar from '../../components/adminNavbar';
 
 const FetchAllStudent = () => {
   const [students, setStudents] = useState([]);
@@ -10,7 +11,7 @@ const FetchAllStudent = () => {
 
   const fetchAllStudents = async () => {
     try {
-      const response = await axiosInstance.get(`${API}/api/admin/allStudents`);
+      const response = await axiosInstance.get("/api/admin/all-students");
       if (response.data.status) {
         setStudents(response.data.data);
       }
@@ -22,7 +23,7 @@ const FetchAllStudent = () => {
   const handleDrop = async (id) => {
     if (window.confirm("Are you sure you want to drop this student?")) {
       try {
-        const res = await axiosInstance.delete(`${API}/api/admin/dropStudent/${id}`);
+        const res = await axiosInstance.delete("/api/admin/drop-student/${id}");
         if (res.data.status) {
           // List update karein bina refresh kiye
           console.log(id)
@@ -45,7 +46,9 @@ const FetchAllStudent = () => {
   );
 
   return (
-    <div className={styles.pageContainer}>
+    <div className={styles.mainContainer}>
+      <AdminNavbar />
+      <div className={styles.pageContainer}>
       <header className={styles.header}>
         <h1 className={styles.title}>All Registered Students</h1>
         <div className={styles.controls}>
@@ -97,6 +100,7 @@ const FetchAllStudent = () => {
           </tbody>
         </table>
       </div>
+    </div>
     </div>
   );
 };

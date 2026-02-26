@@ -8,7 +8,7 @@ const AllCourses = () => {
 
   const allCourses = async () => {
     try {
-      const response  = await axiosInstance.get("/api/admin/allCourses");
+      const response  = await axiosInstance.get("/api/admin/all-courses");
       if(response.data.status){
         setCourses(response.data.data);
       }

@@ -1,0 +1,151 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Main Layout Container */
+.mainContainer {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    min-height: 100vh;
+}
+
+/* Title Styling */
+.title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #3b82f6;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+
+/* Question Card Styling */
+.questionCard {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-bottom: 25px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s ease;
+}
+
+.questionCard:hover {
+    border-color: #3b82f6;
+}
+
+.questionCard h3 {
+    font-size: 18px;
+    color: #334155;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Options Wrapper */
+.options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+/* Individual Option Label */
+.optionLabel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    background-color: #f1f5f9;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: #475569;
+    transition: all 0.2s ease;
+}
+
+.optionLabel:hover {
+    background-color: #e2e8f0;
+}
+
+/* Input Radio Button Styling */
+.optionLabel input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #3b82f6; /* Modern Blue Checkbox Color */
+    cursor: pointer;
+}
+
+/* Selected Option Highlight (Pseudo-class used via name attribute logic) */
+.optionLabel:has(input:checked) {
+    background-color: #eff6ff;
+    border-color: #3b82f6;
+    color: #1e40af;
+}
+
+/* Submit Button Styling */
+.submitBtn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 40px auto;
+    padding: 16px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+.submitBtn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px -3px rgba(37, 99, 235, 0.4);
+}
+
+.submitBtn:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Loading State Styling */
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 24px;
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .mainContainer {
+        padding: 15px;
+    }
+    
+    .questionCard {
+        padding: 20px;
+    }
+    
+    .title {
+        font-size: 22px;
+    }
+}

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./addCourse.module.css"; // CSS module use karein
 import axiosInstance from "../../api/axoisInstance.js";
+import AdminNavbar from "../../components/adminNavbar.jsx";
+import TopAdminNavbar from "../../components/AdminComponent/topAdminNavbar.jsx";
 
 const AddCourse = () => {
   
@@ -23,7 +25,7 @@ const AddCourse = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axiosInstance.post("/api/admin/addCourse", formData);
+      const response = await axiosInstance.post("/api/admin/add-course", formData);
       if (response.data.status) {
         alert("Course Added Successfully!");
         setFormData({
@@ -39,9 +41,14 @@ const AddCourse = () => {
   };
 
   return (
-    <div className={styles.container}>
+   <div className={styles.mainContainer}>
+      <AdminNavbar />
+
+     <div className={styles.container}>
+      <TopAdminNavbar pageTitle={"Add Course"}/>
       <div className={styles.formCard}>
         <h2 className={styles.title}>Add New Course</h2>
+
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.grid}>
             {/* Course Name */}
@@ -108,6 +115,7 @@ const AddCourse = () => {
         </form>
       </div>
     </div>
+   </div>
   );
 };
 

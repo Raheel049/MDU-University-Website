@@ -47,6 +47,10 @@ const addStudentSchema = new mongoose.Schema({
         required : true
     },
 
+    attamptEntryTest : {
+        type : Boolean,
+        default : false
+    },
 
 }, {timestamps : true})
 

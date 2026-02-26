@@ -5,7 +5,7 @@ dotenv.config()
 import authRoute from "./routes/authRoutes.js";
 import cors from "cors"
 import adminPortalRoutes from "./routes/adminPortalRoutes.js";
-import admissionRoutes from "./routes/admissionForm.js";
+import studentDashboardRoutes from "./routes/studentDashboardRoutes.js";
 
 const app = express()
 const port = 5000  
@@ -17,7 +17,7 @@ app.use(express.urlencoded({extended : true}))
 dbConnect();
 app.use("/api/auth",authRoute);
 app.use("/api/admin", adminPortalRoutes);
-app.use("/api/student",admissionRoutes);
+app.use("/api/student",studentDashboardRoutes);
 
 app.post("/apitest", (request, response) => {
      console.log("server running successfully");
