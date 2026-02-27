@@ -1,0 +1,159 @@
+/* Home.module.css */
+
+.homeWrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: block; /* Ensures natural flow */
+  /* overflow-y: visible !important; */
+  position: relative;
+}
+
+/* Animations */
+.animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slider Section */
+.sliderSection {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* About Section */
+.aboutSection {
+  display: flex;
+  padding: 50px;
+  align-items: center;
+  gap: 40px;
+  background: #fff;
+}
+
+.aboutText { width: 75%; }
+.aboutText h2 { font-size: 36px; margin-bottom: 20px; color: #333; }
+.aboutText p { font-size: 17px; line-height: 1.7; margin-bottom: 20px; }
+.aboutText button { 
+  padding: 10px 25px; 
+  background: #1b5e20; 
+  color: #fff; 
+  border: none; 
+  cursor: pointer; 
+}
+
+.aboutLogo { width: 25%; }
+.aboutLogo img { width: 100%; height: auto; }
+
+/* Departments Section */
+.section3 {
+  background-color: #0e2d63;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.section3 h1 { color: white; margin-bottom: 10px; }
+
+.departmentsSection {
+  padding: 30px 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.deptBox {
+  width: 260px;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.deptBox img { width: 100%; height: 200px; object-fit: cover; }
+.deptBox a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  color: #0e2d63;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* News Section */
+.sectionContainer {
+  width: 100%;
+  padding: 60px 0;
+  background-color: #f4f6f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading { font-size: 48px; font-weight: 800; color: #000; }
+.underline { width: 50px; height: 3px; background-color: #1a3e72; margin-bottom: 50px; }
+
+.boxContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 90%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+.newsCard {
+  flex: 0 1 380px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.imageDiv { height: 250px; overflow: hidden; }
+.imageDiv img { width: 100%; height: 100%; object-fit: cover; }
+
+.contentWrapper { display: flex; align-items: stretch; }
+
+.dateBox {
+  background-color: #1a3e72;
+  color: white;
+  padding: 15px;
+  min-width: 95px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dateText { font-size: 32px; font-weight: bold; line-height: 1; }
+.monthText { font-size: 13px; text-transform: uppercase; margin-top: 5px; }
+
+.textContainer {
+  padding: 20px;
+  flex: 1;
+}
+
+.titleLink {
+  font-size: 18px;
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.authorInfo { display: flex; align-items: center; font-size: 13px; color: #777; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .aboutSection { flex-direction: column; padding: 20px; }
+  .aboutLogo { width: 60%; }
+  .aboutText { width: 100%; text-align: center; }
+  .newsCard { flex: 0 1 100%; }
+  .contentWrapper { flex-direction: row; } /* Date side par hi rahegi mobile par bhi */
+}

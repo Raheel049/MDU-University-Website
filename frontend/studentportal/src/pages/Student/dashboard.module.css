@@ -61,7 +61,7 @@
 }
 
 .navButton:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: #ffffff1a;
     color: white;
 }
 
@@ -349,4 +349,16 @@
         top: 10px;
 
     }
+}
+
+.logoInfo, h2{
+    color: #ffffff;
+}
+
+.card h2{
+    color: #0d9488;
+}
+
+.testIcon h2{
+    color: #0d9488;
 }

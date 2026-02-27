@@ -27,12 +27,12 @@ function HeroSlider() {
     <Box 
       sx={{ 
         width: "100%", 
-        height: "90vh", // Puri screen ki height
+        minHeight: "90vh", // Puri screen ki height
         display: "flex", 
         marginTop : "64px",
         flexDirection: "column",
         justifyContent: "center", // Vertically center karega
-        overflow: "hidden",
+        // overflow: "hidden",
         bgcolor: "#f0f0f0" // Optional: Background color check karne ke liye
       }}
     >

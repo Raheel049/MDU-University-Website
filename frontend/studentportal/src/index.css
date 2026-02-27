@@ -1,5 +1,13 @@
+
 @import "tailwindcss";
 
 /* Ye batana lazmi hai ke Tailwind kahan kahan apply ho */
-@source "./**/*.{js,ts,jsx,tsx}";
+@source ".*.{js,ts,jsx,tsx}";
+
+/* Isay aisay kar dein */
+html, body {
+    /* overflow: hidden;  <-- Is line ko hata dein */
+    overflow-y: auto;    /* Ye scrollbar ko wapis le ayega */
+    height: auto;        /* Fix height khatam karein */
+  }
 

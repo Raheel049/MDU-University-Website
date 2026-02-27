@@ -48,7 +48,7 @@ const AdminNavbar = () => {
           <div className={styles.logoSection}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <FaGraduationCap size={30} />
-              <h2 style={{ fontSize: "18px", fontWeight: "800" }}>
+              <h2 style={{ fontSize: "18px", margin : "auto 0"}}>
                 UNIVERSITY CMS
               </h2>
             </div>
@@ -57,29 +57,34 @@ const AdminNavbar = () => {
 
           <button
             className={styles.sidebarBtn}
+            style={{fontWeight : "500"}}
             onClick={() => navTo("/adminDashboard")}
           >
             <FaUserGraduate /> Dashboard
           </button>
           <button
+            style={{fontWeight : "500"}}
             className={styles.sidebarBtnSecondary}
             onClick={() => navTo("/registerManager")}
           >
             <FaUserPlus /> Register Student
           </button>
           <button
+            style={{fontWeight : "500"}}
             className={styles.sidebarBtnSecondary}
             onClick={() => navTo("/addCourse")}
           >
             <FaBookOpen /> Add new Courses
           </button>
           <button
+            style={{fontWeight : "500"}}
             className={styles.sidebarBtnSecondary}
             onClick={() => navTo("/addTeacher")}
           >
             <FaChalkboardTeacher /> Register Teacher
           </button>
           <button
+            style={{fontWeight : "500"}}
             className={styles.sidebarBtnSecondary}
             onClick={() => navTo("/addExamQuestion")}
           >
@@ -88,12 +93,16 @@ const AdminNavbar = () => {
 
           <div className={styles.bottomNav}>
             <button
+            style={{fontWeight : "500"}}
+
               className={styles.sidebarBtnSecondary}
               onClick={() => navTo("/fetchAllStudents")}
             >
               All Students
             </button>
             <button
+            style={{fontWeight : "500"  }}
+
               className={styles.sidebarBtnSecondary}
               onClick={() => navTo("/fetchAllCourses")}
             >

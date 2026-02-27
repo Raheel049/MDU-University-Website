@@ -1,3 +1,9 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 .menuTrigger { display: none; cursor: pointer; }
 
 /* Sidebar Wrapper */
@@ -33,15 +39,30 @@
 
 .closeIcon { display: none; cursor: pointer; font-size: 25px; }
 
-.sidebarBtnSecondary { background: rgba(255, 255, 255, 0.1); color: white; }
+.sidebarBtnSecondary { background: rgba(255, 255, 255, 0.1); color: white;}
 .sidebarBtnSecondary:hover { background: rgba(255, 255, 255, 0.2,);}
 
 
-.sidebarBtn, .sidebarBtnSecondary {
+.sidebarBtn {
     border: none;
     padding: 12px 20px;
     border-radius: 50px;
-    font-weight: 600;
+    /* font-weight: 600; */
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.sidebarBtnSecondary {
+    border: none;
+    padding: 13px 20px;
+    border-radius: 50px;
+    /* font-weight: 500; */
+    font-size: 14px;
     display: flex;
     align-items: center;
     gap: 12px;

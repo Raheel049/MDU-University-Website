@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import axiosInstance from "../../api/axoisInstance";
 import styles from "./registerStudent.module.css";
 import AdminNavbar from "../../components/adminNavbar";
+// import RegisterManager from "./registerManager";
+// import { useNavigate } from "react-router-dom"
 
 const RegisterStudent = ({ admissionData }) => {
   
   const [loading, setLoading] = useState(false);
+  // const navigate = useNavigate()
   
   // Initial State
   const [formData, setFormData] = useState({
@@ -60,6 +63,13 @@ const RegisterStudent = ({ admissionData }) => {
     semester: "",
     password: "" // Default password
       })
+      // admissionData = false
+      // console.log(admissionData);
+      
+
+      // navigate("/registerManager");
+      
+      
     } catch (err) {
       alert(err.response?.data?.message || "Error registering student");
     } finally {

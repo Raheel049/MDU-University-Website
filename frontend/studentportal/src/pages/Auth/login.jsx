@@ -68,7 +68,7 @@ const Login = () => {
             <label className={`${styles["label-text"]} font-medium`}>Password</label>
           </div>
 
-          <Link to={"/signUp"} className={`${styles["link-text"]} text-sm text-blue-600 hover:underline mb-4 block`}>
+          <Link to={"/signUp"} className={`${styles["link-text"]} text-sm text-white hover:underline mb-4 block`}>
             Create an Account!
           </Link>
 
@@ -81,7 +81,7 @@ const Login = () => {
             {loading ? "Logging in..." : "Login"}
           </button>
 
-          <Link to={"/forgotPassword"} className={`${styles["link-text"]} text-sm text-gray-500 mt-4 block text-center`}>
+          <Link to={"/forgotPassword"} className={`${styles["link-text"]} text-sm text-white mt-4 block text-center`}>
             Forgot Password
           </Link>
         </form>
